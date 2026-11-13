@@ -1,10 +1,6 @@
 # ComfyUI Spectrum MiniMax H3
 
-> **Fork experiments:** This fork adds an optional H3 Prompt Composer node and a
-> configurable streamed FinalLayer chunk size. See
-> [Fork optimization experiments](docs/FORK_OPTIMIZATION_EXPERIMENTS.md).
-> Existing Spectrum sampling defaults remain unchanged; no GPU speed or
-> prompt-adherence gain is claimed without matched validation.
+> **Forecast optimizations (PR #125):** Exact-weight identity/latest holds avoid unnecessary FP32 accumulation; audited CPU-history streamed FinalLayers accept optional 16/32/64/128 MiB chunks (16 MiB unchanged by default). See [validation and benchmark instructions](docs/FORK_OPTIMIZATION_EXPERIMENTS.md). No unmeasured speedup is claimed.
 
 A native ComfyUI MiniMax H3 implementation of **Spectrum**, the training-free spectral diffusion feature forecasting method introduced by **Jiaqi Han, Juntong Shi, Puheng Li, Haotian Ye, Qiushan Guo, and Stefano Ermon** in [*Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration*](https://arxiv.org/abs/2603.01623).
 
